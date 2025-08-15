@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>trail test</h1>
+
+    <p id="demo"> </p>
+    <button onmouseover="document.getElementById('demo').innerHTML= Date()">  button </button>
+        <button onclick="this.innerHTML= Date()">  button </button>
+
+
+        <script>
+            function vechile(tyre,color,doors,type){
+                this.Noftyre= tyre;
+                this.carcolour= color;
+                this.cardoors= doors;
+                this.cartype= type;
+            }
+
+            const benz= new vechile( 4 , "red", 4 ,"xuv");
+
+            const a= Object.values(benz);
+            document.getElementById("demo").innerHTML= a;
+
+
+            
+
+
+        </script>
+    
+</body>
+</html>

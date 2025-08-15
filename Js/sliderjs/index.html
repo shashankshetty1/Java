@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Image Slider</title>
+  <style>
+    .slider {
+      position: relative;
+      width: 600px;
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: none; /* Hide all images */
+    }
+
+    .slide.active {
+      display: block; /* Show only the active image */
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <img src="https://picsum.photos/id/237/1100/500" class="slide">
+    <img src="https://picsum.photos/id/235/1100/500" class="slide">
+    <img src="https://picsum.photos/id/231/1100/500" class="slide">
+
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <script>
+    // Get all images
+    let slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    // Show only one image at a time
+    function showSlide(n) {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // hide all
+      }
+      slides[n].style.display = "block"; // show current
+    }
+
+    // Show next image
+    function nextSlide() {
+      currentSlide++;
+      if (currentSlide >= slides.length) {
+        currentSlide = 0; // loop to first
+      }
+      showSlide(currentSlide);
+    }
+
+    // Show previous image
+    function prevSlide() {
+      currentSlide--;
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // loop to last
+      }
+      showSlide(currentSlide);
+    }
+
+    // Auto slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
+    // Show the first image at start
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>The Object.values() Method</h2>
+<p>Object.values() returns an array of values from an object:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Create an Array
+const Display = Object.values(person);
+
+// Display the Array
+document.getElementById("demo").innerHTML = Display;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+body{
+    margin-top: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+#mybutton{
+    background-color: aqua;
+    font-size: 2rem;
+    padding: 5px 25px;
+    border-radius: 40px;
+   
+}
+#mybutton:hover{
+    background-color: red;
+} 
+#mylabel{
+    font-size: 10em;
+
+}

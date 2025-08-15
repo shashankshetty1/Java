@@ -5,20 +5,22 @@ import java.util.Arrays;
 
 public class DuplicateInArray {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 1}; 
-        Solution solution = new Solution();
-        System.out.println(solution.hasDuplicate(nums)); 
+        int[] nums = {4,2,3,3,1}; 
+        hasDuplicate(nums); 
+       
     }
-}
 
-class Solution {
-    public boolean hasDuplicate(int[] nums) {
-        Arrays.sort(nums);
+
+
+    static void hasDuplicate(int[] nums) {
+        Arrays.sort(nums);   // function to sort
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] == nums[i + 1]) {
-                return true;
+                 System.out.println(nums[i]);
+                 return;
             }
         }
-        return false;
+        System.out.println("false");
+        System.out.println(Arrays.toString(nums)); 
     }
 }

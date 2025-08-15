@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const person = {
+            firstname : "Ram",
+            lastname : "sitha",
+            wheel : 2,
+            colour : "white",
+            fullname : function() {
+                return (this.firstname + " " + this.lastname).toUpperCase();
+            }
+            
+
+        };
+        delete person.wheel;
+        
+        document.getElementById("demo").innerHTML = person.fullname();
+        document.getElementById("demo").innerHTML += person.wheel;
+
+
+    </script>
+</body>
+</html>
